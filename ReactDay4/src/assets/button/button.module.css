@@ -1,0 +1,8 @@
+.btn>button{
+    background-color: yellow;
+    padding: 10px;
+    width: fit-content;
+}
+.btn{
+    background-color: aqua;
+}

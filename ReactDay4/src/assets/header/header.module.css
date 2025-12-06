@@ -1,0 +1,9 @@
+.head>button{
+    width: fit-content;
+    margin: 10px;
+    padding: 5px;
+    background-color: aquamarine;
+}
+.head>h3{
+    background-color: brown;
+}
