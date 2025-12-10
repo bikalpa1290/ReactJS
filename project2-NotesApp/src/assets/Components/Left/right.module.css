@@ -1,0 +1,22 @@
+.container{
+    width: 60%;
+    height: auto;
+    /* background-color: blanchedalmond; */
+    border-radius: 30px;
+    display: flex;
+    position: relative;
+}
+img{
+  width: 30%;
+  height: 25rem;
+  border: 0.5px solid black;
+  object-fit: cover;
+  border-radius: 10px
+}
+.imageDiv{
+  background-color: black;
+  width: 30%;
+  height: 25rem;
+  border-radius: 10px;
+  position: absolute;
+}
