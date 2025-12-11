@@ -1,9 +1,15 @@
+*{
+  box-sizing: border-box;
+}
 .container{
     width: 60%;
     height: auto;
     /* background-color: blanchedalmond; */
     border-radius: 30px;
-    display: flex;
+    /* display: inlin; */
+    /* flex-direction: column; */
+    gap: 5px;
+    overflow: scroll;
     position: relative;
 }
 img{
@@ -14,9 +20,44 @@ img{
   border-radius: 10px
 }
 .imageDiv{
-  background-color: black;
+  /* background-color: yellow; */
   width: 30%;
   height: 25rem;
   border-radius: 10px;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* justify-content: space-around; */
+}
+.imageDiv div{
+  border: 0.5px solid white;
+  margin: 10px;
+  border-radius: 30px;
+  margin-top: 70px
+}
+.divTitle{
+  padding: 10px;
+  width: 80%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: large;
+}
+.divDescrip{
+  height: 130px;
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  overflow:scroll;
+  font-size: small;
+}
+.Title{
+  margin: 0px;
+}
+.card{
+  display: flex;
+  /* flex-direction: column; */
 }
