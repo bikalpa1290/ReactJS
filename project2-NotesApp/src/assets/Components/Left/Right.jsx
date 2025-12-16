@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './right.module.css'
 import Card from './Card'
-const Right = () => {
+import Left from './Left'
+const Right = (props) => {
   return (
   <div className={styles.container}>
-      <Card />
-      <Card />
-      <Card />  
-      <Card />
+      {props.Task.map(function(elem){
+        return <Card key={elem.key} head={elem.heading} body={elem.description}/>
+      })}
   </div> 
   )
 }

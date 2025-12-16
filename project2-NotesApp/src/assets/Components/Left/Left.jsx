@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from "./left.module.css"
+import Right from './Right';
 const Left = () => {
   const [heading, setHeading] = useState("");
   const [description, setDescription] = useState("");
@@ -11,6 +12,8 @@ const Left = () => {
   const setDes = (e) => {
     setDescription(e.target.value);
   }
+const [task, setTask] = useState([])
+
 
   return (
     <form 
@@ -18,8 +21,10 @@ const Left = () => {
         onSubmit={(e) => {
           e.preventDefault();
           console.log("form submitted");
-          console.log(heading);
-          console.log(description);
+          const copyTask=[...task]
+          copyTask.push({heading,description})
+          setTask(copyTask)
+          console.log(task);
         }}
       >
         <input 
@@ -38,7 +43,9 @@ const Left = () => {
         />
 
         <button>Add your note</button>
-      </form>          
+        <Right Task={task}/>  
+      </form>     
+   
   )
 }
 
