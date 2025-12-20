@@ -1,0 +1,17 @@
+*{
+  margin: 0px;
+  /* background-color: black; */
+  /* color: white; */
+}
+div{
+  height: 100vh;
+  /* width: 100%; */
+}
+.darkMode{
+  background-color: black;
+  color: white;
+}
+.lightMode{
+    background-color: white;
+    color: black;
+}
