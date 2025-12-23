@@ -1,0 +1,33 @@
+*{
+  background-color: black;
+  color: white;
+}
+button{
+  background-color: green;
+  border: 0px;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  scale: 1;
+  margin-left: 45%;
+}
+.main{
+  overflow: auto;
+  margin-left: 30px;
+}
+img{
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+  /* margin: 2px; */
+  /* border: 1px solid white; */
+}
+.imgDiv{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 4px;
+  font-weight: bold;
+}
