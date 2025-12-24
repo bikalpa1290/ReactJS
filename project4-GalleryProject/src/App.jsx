@@ -1,31 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./App.module.css"
 import axios from 'axios'
+import Photos from './assets/Components/Photos';
+
+
 const App = () => {
   const [response, setResponse] = useState([]);
+  const [index, setIndex] = useState(1);
   const getData=async()=>{
-  const {data}=await axios.get("https://picsum.photos/v2/list?page=2&limit=20")
+  const {data}=await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=10`)
+  console.log(data.page);
   setResponse(data);
+  // console.log(data);
   }
-
+const incIndex=()=>{
+  setIndex(prev=>prev+1);
+  console.log(index);
+  setResponse([])
+}
+const decIndex=()=>{
+  if(index>1){
+    setIndex(prev=>prev-1);
+    setResponse([])
+  }
+}
   useEffect(()=>{
     getData();
-  },[])
-  let printUserImage="no user Image"
-  if (printUserImage.length>0){
+  },[index]);
+  let printUserImage=<h1 style={{display:"flex", justifyContent:"center", alignItems:"center", margin:"200px"}}>Loading</h1>
+  if (response.length>0){
     printUserImage=response.map((elem,idx)=>{
-      return <a href={elem.url} target="_blank">
-      <div className={styles.imgDiv} key={idx} >
-        <img src={elem.download_url} alt="No image found" />
-        <h3 style={{display:"inline"}}>{elem.author}</h3>
-      </div>
-      </a>
+      return 
+        <Photos />
     })
   }
   return (
     <div className={styles.main}>
       <div className={styles.image}>
         {printUserImage}
+      </div>
+      <div className={styles.btn}>
+        <button onClick={decIndex}>Prev</button>
+        <h2>Page {index}</h2>
+        <button onClick={incIndex}>Next</button>
       </div>
     </div>
   )

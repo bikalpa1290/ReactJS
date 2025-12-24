@@ -3,14 +3,14 @@
   color: white;
 }
 button{
-  background-color: green;
+  /* background-color: green; */
   border: 0px;
   padding: 20px;
   margin: 5px;
   border-radius: 30px;
   cursor: pointer;
-  scale: 1;
-  margin-left: 45%;
+  /* scale: 1; */
+  margin-left: 50%;
 }
 .main{
   overflow: auto;
@@ -18,8 +18,8 @@ button{
 }
 img{
   display: inline-block;
-  height: 250px;
-  width: 250px;
+  height: 220px;
+  width: 220px;
   border-radius: 20px;
   /* margin: 2px; */
   /* border: 1px solid white; */
@@ -28,6 +28,25 @@ img{
   display: inline-flex;
   flex-direction: column;
   text-align: center;
-  margin: 4px;
+  margin: 10px;
   font-weight: bold;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn>button{
+  margin: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 0, 0.534);
+  width: 7rem;
+}
+button {
+  transition: transform 0.1s ease;
+}
+button:active{
+  transform: scale(0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
 }
