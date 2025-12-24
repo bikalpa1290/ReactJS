@@ -9,13 +9,13 @@ const App = () => {
   const [index, setIndex] = useState(1);
   const getData=async()=>{
   const {data}=await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=10`)
-  console.log(data.page);
+  // console.log(data.page);
   setResponse(data);
   // console.log(data);
   }
 const incIndex=()=>{
   setIndex(prev=>prev+1);
-  console.log(index);
+  // console.log(index);
   setResponse([])
 }
 const decIndex=()=>{
@@ -30,8 +30,8 @@ const decIndex=()=>{
   let printUserImage=<h1 style={{display:"flex", justifyContent:"center", alignItems:"center", margin:"200px"}}>Loading</h1>
   if (response.length>0){
     printUserImage=response.map((elem,idx)=>{
-      return 
-        <Photos />
+      return (
+        <Photos elem={elem} id={idx}/> )
     })
   }
   return (
