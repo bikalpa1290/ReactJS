@@ -21,7 +21,7 @@ form>button{
     color: white;
 }
 .details>div{
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 70vh;
     width: 50vh;
     display: inline-block;
@@ -35,6 +35,6 @@ img{
     display: flex;
 }
 .weather{
-    display: inline;
-    
+    margin-top: 15vh;
+    margin-left: 20px;
 }
