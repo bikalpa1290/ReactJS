@@ -1,0 +1,40 @@
+form{
+
+}
+form>input{
+    border: 1px solid wheat;
+    border-radius: 30px;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    width: 30rem;
+}
+form>button{
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    /* width: 30px; */
+}
+*{
+    margin: 0px;
+    background-color: black;
+    color: white;
+}
+.details>div{
+    background-color: aqua;
+    height: 70vh;
+    width: 50vh;
+    display: inline-block;
+    /* margin: 5px; */
+}
+img{
+    height: 70vh;
+    width: 50vh; 
+}
+.details{
+    display: flex;
+}
+.weather{
+    display: inline;
+    
+}
