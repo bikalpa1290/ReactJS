@@ -4,6 +4,10 @@ import styles from "./app.module.css"
 import 'remixicon/fonts/remixicon.css'
 import "leaflet/dist/leaflet.css";
 import WeatherMap from "./assets/Components/WeatherMap";
+import WeatherPhoto from "./assets/Components/WeatherPhoto";
+import Weatherdetails from "./assets/Components/Weatherdetails";
+
+
 const App = () => {
   const [city, setCity] = useState("kathmandu");
   const [response, setResponse] = useState({"coord":{"lon":85.3167,"lat":27.7167},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02d"}],"base":"stations","main":{"temp":287.27,"feels_like":286.36,"temp_min":287.27,"temp_max":287.27,"pressure":1014,"humidity":62,"sea_level":1014,"grnd_level":850},"visibility":7000,"wind":{"speed":4.12,"deg":280},"clouds":{"all":20},"dt":1767350961,"sys":{"type":1,"id":9201,"country":"NP","sunrise":1767316178,"sunset":1767353711},"timezone":20700,"id":1283240,"name":"Kathmandu","cod":200})
@@ -40,17 +44,8 @@ const submitHandler=(e)=>{
         <button onClick={getResponse}>Change</button>
       </form>
       <div className={styles.details}>
-        <div className="Photos">
-          <img src="https://i.pinimg.com/originals/90/85/bb/9085bb2580eee46db433164fdcca9500.gif" alt="" />
-        </div>
-        <div className={styles.weather}>
-          <h1 style={{margin:"10px",marginLeft:"0px"}}>{response.name}</h1>
-          <h4 style={{margin:"10px"}}>  {new Date(response.dt * 1000).toLocaleString("en-US", {
-    timeZone: "Asia/Kathmandu"
-  })}</h4>
-          <h1 style={{margin:"10px",marginLeft:"0px"}}>clouds:{response.clouds.all}%</h1>
-          <span style={{margin:"10px"}}>min:{response.main.temp_min}</span> <span>max:{response.main.temp_max}</span>
-        </div>
+          <WeatherPhoto />
+          <Weatherdetails name={response.name} dt={response.dt} clouds={response.clouds.all} temp_min={response.main.temp_min} temp_max={response.main.temp_max}/>
       </div>
       </div>
     <div className={styles.div2}>
