@@ -6,6 +6,7 @@ import "leaflet/dist/leaflet.css";
 import WeatherMap from "./assets/Components/WeatherMap";
 import WeatherPhoto from "./assets/Components/WeatherPhoto";
 import Weatherdetails from "./assets/Components/Weatherdetails";
+import Weathericon from "./assets/Components/Weathericon";
 
 
 const App = () => {
@@ -33,32 +34,28 @@ const App = () => {
       console.error(err.response?.data || err.message);
     }
   };
-const submitHandler=(e)=>{
-  e.preventDefault();
-}
+
   return (
     <div className={styles.mainDiv}>
       <div className={styles.div1}>
-        <form onSubmit={submitHandler}>
-        <input type="text" placeholder="Location" onKeyDown={(e)=>{if(e.key=="Enter"){setCity(e.target.value) ;console.log("clicked");}}}/>
-        <button onClick={getResponse}>Change</button>
-      </form>
+        <form
+  onSubmit={(e) => {e.preventDefault();getResponse();}}>
+  <input
+    type="text"
+    value={city}
+    onChange={(e) => setCity(e.target.value)}
+    placeholder="Location"
+  />
+  <button type="submit">Change</button>
+</form>
+
       <div className={styles.details}>
           <WeatherPhoto />
           <Weatherdetails name={response.name} dt={response.dt} clouds={response.clouds.all} temp_min={response.main.temp_min} temp_max={response.main.temp_max}/>
       </div>
       </div>
     <div className={styles.div2}>
-      <div className={styles.icon}>
-        <span><i class="ri-windy-line"></i><p>{response.wind.speed}m/s</p></span>
-        <span> <i class="ri-water-percent-line"></i><p>{humidity}%</p></span>
-        <span><i class="ri-sun-fill"></i><p>{new Date(response.sys.sunrise * 1000).toLocaleTimeString()}</p></span>
-        <span><i class="ri-haze-fill"></i><p>{new Date(response.sys.sunset * 1000).toLocaleTimeString()}</p></span>
-      </div>
-      <div className={styles.icon}>
-        <span><i class="ri-focus-2-fill"></i><p>{visibility}</p></span>  
-        <p style={{fontSize:"2rem",border:"2px solid white",display:"flex",alignItems:"center", padding:"3px",borderRadius:"30px"}}>Get informed by us!!</p>    
-      </div>
+      <Weathericon winSpeed={response.wind.speed} humid={humidity} sunRise={response.sys.sunrise} sunSet={response.sys.sunset} isVisible={visibility}/>
       <div className={styles.map}>
         <WeatherMap lat={response.coord.lat} lon={response.coord.lon} city={response.name}/>
       </div>
