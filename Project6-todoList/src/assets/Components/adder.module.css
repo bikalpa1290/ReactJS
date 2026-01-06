@@ -1,0 +1,13 @@
+.icon3{
+    color: gray;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.icon3:hover{
+    transform: scale(1.1);
+}
+
+.icon3:active{
+    transform: scale(1);
+}

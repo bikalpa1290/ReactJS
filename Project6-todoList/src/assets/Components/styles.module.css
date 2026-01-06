@@ -28,4 +28,37 @@ input{
     color: #5F9598;
     position: absolute;
     left: 6px;
-};
+    color:rgba(255, 0, 0, 0.527);
+    transition: 0.5s;
+}
+.icon1:hover{
+    color: red;
+    scale: 1.1;
+}
+.icon1:active{
+  /* box-shadow: 0 5px #666; */
+  transform: translateY(4px);
+}
+.icon2{
+    display: inline-block;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.icon2:hover{
+    transform: scale(1.2);
+}
+
+.icon2:active{
+    transform: scale(1);
+}
+
+.inputComplete{
+    color: green;
+    font: bold;
+    text-decoration: line-through;
+}
+.inputIncomplete{
+    font: bold;
+    text-decoration: none;
+}
