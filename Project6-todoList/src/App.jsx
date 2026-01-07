@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div className={styles.mainDiv}>
         <Body />
-        <Adder/>
     </div>
   )
 }

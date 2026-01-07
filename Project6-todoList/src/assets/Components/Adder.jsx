@@ -1,10 +1,10 @@
 import React from 'react'
 import 'remixicon/fonts/remixicon.css'
 import styles from './adder.module.css';
-const Adder = () => {
+const Adder = ({onAdd}) => {
   return (
     <div>
-      <i className={`ri-add-circle-line ${styles.icon3} ri-4x`}></i>
+      <i className={`ri-add-circle-line ${styles.icon3} ri-4x`} onClick={onAdd}></i>
     </div>
   )
 }
