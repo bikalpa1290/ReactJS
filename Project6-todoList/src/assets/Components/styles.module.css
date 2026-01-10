@@ -1,14 +1,4 @@
-.main{
-    height: 70vh;
-    width: 60vh;
-    background-color: #94B4C1;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    justify-content: space-between;
-}
+
 .formDiv{
     position: relative;
     display: flex;
@@ -62,4 +52,19 @@ input{
 .inputIncomplete{
     font: bold;
     text-decoration: none;
+}
+.main{
+    height: 70vh;
+    width: 60vh;
+    background-color: #94B4C1;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    position: relative;
+}
+.add{
+    position: absolute;
+    bottom: 20px;
 }
