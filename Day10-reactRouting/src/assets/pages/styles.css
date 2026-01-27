@@ -1,0 +1,9 @@
+div>h1{
+    font-size: 100px;
+    text-decoration: underline;
+}
+.div2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
